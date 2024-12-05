@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<meta property="og:title" content="Jun's Playlist" />
+	<meta property="og:image" content="meta.jpg" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="mobile-web-app-capable" content="yes" />
+
+
+	<title>jun.playlist</title>
+	<link rel="shortcut icon" type="image/png" href="favicon.png" />
+	<link rel="apple-touch-icon" href="favicon.png">
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/20.0.0/tween.umd.js"></script>
+	<script async src="https://unpkg.com/es-module-shims@1.6.2/dist/es-module-shims.js"></script>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-QNGF0KF332"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-QNGF0KF332');
+	</script>
+
+	<script type="importmap">
+		{
+        "imports": {
+          "three": "https://threejs.org/build/three.module.js",
+          "three/addons/": "https://threejs.org/examples/jsm/"
+        }
+      }
+		</script>
+	<style>
+		/* 添加 iframe 相關樣式 */
+		html, body {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background: black;
+		}
+		#container {
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+	</style>
+</head>
+
+<body>
+
+	<img class="closebutton" src="icons/Close Icon.svg" onclick="closeInfo()" />
+	<div class="title">
+		<div>
+			<span>
+
+				<span class="text">
+					<p>jun.playlist<sup>&reg;</sup>
+				</span>
+			</span>
+
+		</div>
+
+
+
+
+
+	</div>
+	<div class="colop">
+		<div class="infobutton" onclick="showInfo()">
+
+			<span class="text">
+				<p> ABOUT</p>
+			</span>
+
+		</div>
+	</div>
+
+
+	<div id="colopcontent">
+		<div class="innerbox top">
+			<div class="wrap-inner first">
+				<p>jun.playlist<sup>&reg;</sup>—K-Pop Music Poster Series is a self-initiated project designed by Jun.
+					It has been a continuous work in progress, leading up to the development of this website in
+					collaboration with Ji this year. This interactive website showcases diverse typographic posters
+					inspired by K-pop songs. The website offers a unique real-time listening
+					experience, immersing users in the captivating world of K-pop. Users can embark on a journey of
+					discovery, appreciation, and celebration of the vibrant K-pop culture through this platform.
+				</p>
+			</div>
+			<div class="wrap-inner second">
+
+				<p>
+					Poster Design by <a href="https://www.instagram.com/jun.works/" target="_blank">Jun</a>
+					<br>
+					Website Development by <a href="https://www.instagram.com/jipark0/" target="_blank">Ji</a>
+					<br>
+					<br>
+					<a href="https://playlist.li" target="_blank">Archive</a>
+					<br>
+					<a href="https://jun.works" target="_blank">Website</a>
+					<br>
+					<a href="https://open.spotify.com/playlist/6nUox0LmBpddDAafrTHvPd?si=0d96823376b74ea8"
+						target="_blank">Spotify</a>
+				</p>
+
+
+			</div>
+		</div>
+
+		<!-- <div class="innerbox bottom" style="display: flex; align-items: flex-end;">
+			<img src="logo.svg" width="100%">
+
+		</div> -->
+
+	</div>
+
+	<div id="helix">
+		<div>
+			<span class="cardSpan">
+				<span class="icon">
+					<svg width="28" height="15" viewBox="0 0 28 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M27.3571 13.5126L17.0288 15V0L27.3571 1.48736V13.5126Z" fill="white" />
+						<path d="M15.0007 13.5126L7.5125 15V0L15.0007 1.48736V13.5126Z" fill="white" />
+						<path d="M5.48446 13.5126L0.571426 15V0L5.48446 1.48736V13.5126Z" fill="white" />
+					</svg>
+
+
+				</span>
+				<span class="text">
+					<p> LOOP</p>
+				</span>
+			</span>
+
+		</div>
+	</div>
+	<div id="grid">
+		<div>
+			<span class="cardSpan">
+				<span class="icon">
+					<svg width="35" height="15" viewBox="0 0 35 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M10.5257 0H0.392853V15H10.5257V0Z" fill="white" />
+						<path d="M22.7093 0H12.5764V15H22.7093V0Z" fill="white" />
+						<path d="M34.8929 0H24.76V15H34.8929V0Z" fill="white" />
+					</svg>
+
+
+
+				</span>
+				<span class="text">
+					<p> CARD</p>
+				</span>
+			</span>
+
+		</div>
+	</div>
+
+	<div id="right">
+
+		<span class="icon">
+			<svg width="61" height="60" viewBox="0 0 61 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M30.9166 0C14.3752 0 0.916626 13.4568 0.916626 30C0.916626 46.5432 14.3752 60 30.9166 60C47.458 60 60.9166 46.5432 60.9166 30C60.9166 13.4568 47.458 0 30.9166 0Z"
+					fill="black" />
+				<path
+					d="M33.9995 14.3209L30.7582 17.566L40.8874 27.7071H15.4147V32.2927H40.8874L30.7582 42.4338L33.9995 45.6789L49.6601 29.9999L33.9995 14.3209Z"
+					fill="white" />
+			</svg>
+
+		</span>
+	</div>
+
+	<div id="left">
+
+		<span class="icon">
+			<svg width="61" height="60" viewBox="0 0 61 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M0.083374 30C0.083374 46.5432 13.542 60 30.0834 60C46.6248 60 60.0834 46.5432 60.0834 30C60.0834 13.4568 46.6248 0 30.0834 0C13.542 0 0.083374 13.4568 0.083374 30Z"
+					fill="black" />
+				<path
+					d="M27.0006 14.3209L30.2419 17.566L20.1127 27.7071H45.5854V32.2927H20.1127L30.2419 42.4338L27.0006 45.6789L11.34 29.9999L27.0006 14.3209Z"
+					fill="white" />
+			</svg>
+
+
+		</span>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div id="container"></div>
+
+
+
+	<script>
+		function showInfo() {
+			document.querySelector('.closebutton').style.display = "block";
+			var x = document.getElementById("colopcontent");
+
+			var infobutton = document.querySelector('.infobutton');
+			document.querySelector('.title').style.display = "none";
+			document.querySelector('#helix').style.display = "none";
+			document.querySelector('#grid').style.display = "none";
+			x.style.display = "flex";
+			infobutton.style.display = "none";
+
+			//  const mediaQuery = window.matchMedia('(max-width: 880px)')
+
+			// if (mediaQuery.matches) {
+			// 	closebutton.style.display = "block";
+			// } 
+			// else {
+			// 	document.querySelector('.big').style.display = "block";
+			// }
+		}
+
+		function closeInfo() {
+			var x = document.getElementById("colopcontent");
+			var closebutton = document.querySelector('.closebutton');
+			var infobutton = document.querySelector('.infobutton');
+			x.style.display = "none";
+			closebutton.style.display = "none";
+			infobutton.style.display = "block";
+			document.querySelector('.title').style.display = "block";
+			document.querySelector('#helix').style.display = "block";
+			document.querySelector('#grid').style.display = "block";
+		}
+
+
+
+		// setTimeout(function () {
+		// 	const matches = document.querySelectorAll(".spotify_box");
+		// 	for (let i = 0; i < matches.length; i++) {
+		// 		matches[i].style.display = "block";
+		// 	}
+
+
+		// }, 1500);
+	</script>
+	<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+	<!-- partial -->
+	<script src="threex.domevents.js"></script>
+	<script type="module" src="script.js"></script>
+
+</body>
+
+</html>

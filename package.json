@@ -1,0 +1,15 @@
+{
+  "name": "junplaylist",
+  "version": "1.0.0",
+  "description": "Jun's Music Playlist Website",
+  "main": "script.js",
+  "scripts": {
+    "start": "http-server -c-1"
+  },
+  "dependencies": {
+    "three": "^0.154.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
